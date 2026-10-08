@@ -115,12 +115,7 @@
   align-items: center;
   justify-content: center;
   gap: 2px;
-  cursor: pointer;
   transition: border-color 0.2s, background 0.2s, opacity 0.2s;
-}
-
-.binaryboard__tile:disabled {
-  cursor: default;
 }
 
 .binaryboard__tile--eliminated {

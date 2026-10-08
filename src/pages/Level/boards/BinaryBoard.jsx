@@ -10,11 +10,6 @@ export default function BinaryBoard({ state, onAction, shake }) {
   const { a, target, lo, hi, probed, done } = state;
   const mid = Math.floor((lo + hi) / 2);
 
-  const handleProbe = (idx) => {
-    if (done) return;
-    onAction({ type: 'probe', index: idx });
-  };
-
   // Find the last probed info for speech bubble
   const lastProbedIdx = probed.findLastIndex((p) => p);
 
@@ -67,7 +62,7 @@ export default function BinaryBoard({ state, onAction, shake }) {
             const isTarget = done && value === target;
 
             return (
-              <motion.button
+              <motion.div
                 key={value}
                 className={[
                   'binaryboard__tile',
@@ -76,16 +71,12 @@ export default function BinaryBoard({ state, onAction, shake }) {
                   isProbed ? 'binaryboard__tile--probed' : '',
                   isTarget ? 'binaryboard__tile--found' : '',
                 ].filter(Boolean).join(' ')}
-                onClick={() => handleProbe(idx)}
-                disabled={done || isEliminated}
-                whileHover={!done && !isEliminated ? { scale: 1.08 } : undefined}
-                whileTap={!done && !isEliminated ? { scale: 0.95 } : undefined}
                 layout
                 transition={{ type: 'spring', stiffness: 400, damping: 28 }}
               >
                 <span className="binaryboard__tile-val">{value}</span>
-                {isMid && <span className="binaryboard__tile-label mono">Mid: {value}</span>}
-              </motion.button>
+                {isMid && <span className="binaryboard__tile-label mono">MID</span>}
+              </motion.div>
             );
           })}
         </div>

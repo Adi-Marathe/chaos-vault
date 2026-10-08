@@ -28,7 +28,9 @@ export const meta = {
     'else: return mid  // TARGET FOUND!',
   ],
   actions: [
-    { type: 'probe', label: 'Probe Tile', key: null, button: false },
+    { type: 'searchLeft', label: 'Search Left', key: 'ArrowLeft', button: true },
+    { type: 'found', label: 'Target Found', key: 'Enter', button: true },
+    { type: 'searchRight', label: 'Search Right', key: 'ArrowRight', button: true },
   ],
 };
 
@@ -59,59 +61,70 @@ export function applyAction(state, action) {
     return { ok: false, reason: 'The target has already been found.', state };
   }
 
-  if (action.type !== 'probe') {
-    return { ok: false, reason: `Unknown action: ${action.type}`, state };
-  }
-
   const { a, target, lo, hi, probed } = state;
   const mid = Math.floor((lo + hi) / 2);
-  const idx = action.index;
-
-  // Must probe the exact middle
-  if (idx !== mid) {
-    // Use 1-based tile numbers in the reason
-    return {
-      ok: false,
-      reason: `Binary search always probes the middle of what is left: tile ${mid + 1} (low ${lo + 1}, high ${hi + 1}).`,
-      state,
-    };
-  }
-
   const value = a[mid];
   const newProbed = [...probed];
   newProbed[mid] = true;
 
-  if (value === target) {
-    return {
-      ok: true,
-      state: { ...state, probed: newProbed, done: true },
-      event: {
-        text: `Probed tile ${mid + 1} (val: ${value}) — target found!`,
-        line: 4, // return mid
-      },
-    };
+  if (action.type === 'found') {
+    if (value === target) {
+      return {
+        ok: true,
+        state: { ...state, probed: newProbed, done: true },
+        event: {
+          text: `Mid is ${value} — target found!`,
+          line: 4, // return mid
+        },
+      };
+    } else {
+      return {
+        ok: false,
+        reason: `Target is ${target}, but mid is ${value}. Not a match.`,
+        state,
+      };
+    }
   }
 
-  if (value < target) {
-    return {
-      ok: true,
-      state: { ...state, lo: mid + 1, probed: newProbed },
-      event: {
-        text: `Probed ${value}: too low, discard the left half. New range [${mid + 2}..${hi + 1}]`,
-        line: 3, // low = mid + 1
-      },
-    };
+  if (action.type === 'searchLeft') {
+    if (target < value) {
+      return {
+        ok: true,
+        state: { ...state, hi: mid - 1, probed: newProbed },
+        event: {
+          text: `Target ${target} < ${value}. Searching left half [${lo + 1}..${mid}].`,
+          line: 2, // high = mid - 1
+        },
+      };
+    } else {
+      return {
+        ok: false,
+        reason: `Target ${target} is not less than mid ${value}! Should search right.`,
+        state,
+      };
+    }
   }
 
-  // value > target
-  return {
-    ok: true,
-    state: { ...state, hi: mid - 1, probed: newProbed },
-    event: {
-      text: `Probed ${value}: too high, discard the right half. New range [${lo + 1}..${mid}]`,
-      line: 2, // high = mid - 1
-    },
-  };
+  if (action.type === 'searchRight') {
+    if (target > value) {
+      return {
+        ok: true,
+        state: { ...state, lo: mid + 1, probed: newProbed },
+        event: {
+          text: `Target ${target} > ${value}. Searching right half [${mid + 2}..${hi + 1}].`,
+          line: 3, // low = mid + 1
+        },
+      };
+    } else {
+      return {
+        ok: false,
+        reason: `Target ${target} is not greater than mid ${value}! Should search left.`,
+        state,
+      };
+    }
+  }
+
+  return { ok: false, reason: `Unknown action: ${action.type}`, state };
 }
 
 export function isDone(state) {
@@ -121,5 +134,9 @@ export function isDone(state) {
 export function nextCorrectAction(state) {
   if (state.done) return null;
   const mid = Math.floor((state.lo + state.hi) / 2);
-  return { type: 'probe', index: mid };
+  const value = state.a[mid];
+  
+  if (value === state.target) return { type: 'found' };
+  if (state.target < value) return { type: 'searchLeft' };
+  return { type: 'searchRight' };
 }
