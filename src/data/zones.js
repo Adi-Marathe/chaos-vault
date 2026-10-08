@@ -8,7 +8,7 @@ export const zones = [
     name: 'Boot Camp',
     zone: 0,
     status: 'soon',
-    color: 'var(--zone-mint)',
+    color: 'var(--zone-ice)',
     algorithms: 'Tutorial & Basics',
     difficulty: 'Starter',
     description: 'Calibrate your scanner and learn interval division fundamentals.',

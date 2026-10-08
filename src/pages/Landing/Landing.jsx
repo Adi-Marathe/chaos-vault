@@ -8,6 +8,7 @@ import Card from '../../components/Card/Card';
 import Tag from '../../components/Tag/Tag';
 import ProgressBar from '../../components/ProgressBar/ProgressBar';
 import ExplainBox from '../../components/ExplainBox/ExplainBox';
+import { useToast, ToastContainer } from '../../components/Toast/Toast';
 import './Landing.css';
 
 /* ── Animation variants ── */
@@ -52,6 +53,7 @@ const modes = [
     icon: Swords,
     tag: 'Ranked',
     name: 'Arena',
+    color: '#FFC4C4', // slightly deeper coral/pink
     body: 'Speed run sorting against time. Execute swaps with maximum mechanical APM before the timer crashes.',
     footer: ['Leaderboard: Active', 'Enter →'],
   },
@@ -59,6 +61,7 @@ const modes = [
     icon: Search,
     tag: 'Logic',
     name: 'Detective',
+    color: '#CDE1FF', // slightly deeper blue
     body: 'Find the faulty invariant in pre-scrambled arrays. Inspect intermediate steps to catch where logic drifted.',
     footer: ['18 Case Files', 'Investigate →'],
   },
@@ -66,6 +69,7 @@ const modes = [
     icon: FlaskConical,
     tag: 'Sandbox',
     name: 'Lab',
+    color: '#DCCBFF', // slightly deeper lavender
     body: 'Interactive sandbox with custom array inputs, worst-case generators, and step-by-step memory meters.',
     footer: ['Free Tinker', 'Open Lab →'],
   },
@@ -73,6 +77,7 @@ const modes = [
     icon: CalendarDays,
     tag: 'Daily #419',
     name: 'Daily',
+    color: '#FFE082', // slightly deeper yellow
     body: 'Fresh handcrafted puzzle every 24 hours. Compete for global minimal-move ranks and daily streak badges.',
     footer: ['Resets in 7h 14m', 'Solve →'],
   },
@@ -110,8 +115,34 @@ function NumberTiles({ zoneColor }) {
   );
 }
 
+/* ── Test Comparison Engine Illustration ── */
+function TestComparisonEngine() {
+  return (
+    <motion.div className="landing__engine" variants={fadeUp}>
+      <div className="landing__engine-header mono">
+        <span className="landing__engine-title">{'>_'} TEST COMPARISON ENGINE</span>
+        <span className="landing__engine-hint">Swap items to check partition</span>
+      </div>
+      <div className="landing__engine-body">
+        <div className="landing__engine-array">
+          <div className="landing__engine-node">14</div>
+          <span className="landing__engine-op">{'≤'}</span>
+          <div className="landing__engine-node landing__engine-node--pivot">29 [PIVOT]</div>
+          <span className="landing__engine-op">{'≤'}</span>
+          <div className="landing__engine-node">52</div>
+          <div className="landing__engine-node">88</div>
+        </div>
+        <div className="landing__engine-status mono">
+          Partition Valid
+        </div>
+      </div>
+    </motion.div>
+  );
+}
+
 export default function Landing() {
   const { clearedCount, nextLevel, coins } = useProgress();
+  const { toasts, show, dismiss } = useToast(3500);
   const allCleared = clearedCount >= TOTAL_LEVELS;
 
   /* CTA logic */
@@ -160,6 +191,8 @@ export default function Landing() {
                 View world map <ArrowRight size={14} />
               </Button>
             </motion.div>
+
+            <TestComparisonEngine />
           </div>
 
           {/* Up-next card */}
@@ -253,20 +286,26 @@ export default function Landing() {
             {modes.map((m) => {
               const Icon = m.icon;
               return (
-                <Card key={m.name} className="landing__mode-card landing__mode-card--disabled">
-                  <div className="landing__mode-top">
+                <Card key={m.name} className="landing__mode-card">
+                  <div className="landing__mode-top" style={{ background: m.color }}>
                     <span className="landing__mode-icon">
                       <Icon size={20} />
                     </span>
                     <Tag>{m.tag}</Tag>
                   </div>
-                  <h3 className="landing__mode-name">{m.name}</h3>
-                  <p className="landing__mode-body">{m.body}</p>
-                  <div className="landing__mode-footer mono">
-                    <span>{m.footer[0]}</span>
-                    <span className="landing__mode-action">{m.footer[1]}</span>
+                  <div className="landing__mode-content">
+                    <h3 className="landing__mode-name">{m.name}</h3>
+                    <p className="landing__mode-body">{m.body}</p>
+                    <div className="landing__mode-footer mono">
+                      <span>{m.footer[0]}</span>
+                      <span 
+                        className="landing__mode-action"
+                        onClick={() => show("This module is currently sealed. Access will be granted in a forthcoming update.", "info")}
+                      >
+                        {m.footer[1]}
+                      </span>
+                    </div>
                   </div>
-                  <div className="landing__mode-soon">Soon</div>
                 </Card>
               );
             })}
@@ -286,6 +325,7 @@ export default function Landing() {
           </div>
         </footer>
       </div>
+      <ToastContainer toasts={toasts} onDismiss={dismiss} />
     </div>
   );
 }

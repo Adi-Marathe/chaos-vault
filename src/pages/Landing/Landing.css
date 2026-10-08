@@ -17,7 +17,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: var(--space-2xl);
-  align-items: start;
+  align-items: stretch;
   padding: var(--space-3xl) 0 var(--space-xl);
 }
 
@@ -142,6 +142,78 @@
   font-weight: 700;
   color: var(--ink);
   background: var(--cream);
+}
+
+/* Test Comparison Engine Illustration */
+.landing__engine {
+  margin-top: auto;
+  border: 2px solid var(--ink);
+  border-bottom: 4px solid var(--ink);
+  border-radius: 12px;
+  background: var(--cream);
+  padding: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.landing__engine-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.7rem;
+}
+
+.landing__engine-title {
+  color: var(--slate);
+  text-transform: uppercase;
+}
+
+.landing__engine-hint {
+  color: var(--violet);
+}
+
+.landing__engine-body {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.landing__engine-array {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+}
+
+.landing__engine-node {
+  height: 36px;
+  padding: 0 14px;
+  border: 2px solid var(--ink);
+  border-radius: var(--radius-pill);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.landing__engine-node--pivot {
+  background: var(--yellow);
+  font-weight: 700;
+}
+
+.landing__engine-op {
+  font-weight: 700;
+}
+
+.landing__engine-status {
+  background: var(--lime);
+  border: 2px solid var(--ink);
+  border-radius: var(--radius-pill);
+  padding: 6px 14px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--ink);
 }
 
 /* Up-next info section */
@@ -279,21 +351,25 @@
 .landing__mode-card {
   display: flex;
   flex-direction: column;
-  gap: var(--space-sm);
-  padding: var(--space-lg);
+  padding: 0; /* Override default Card padding */
   position: relative;
   overflow: hidden;
-}
-
-.landing__mode-card--disabled {
-  opacity: 0.55;
-  pointer-events: none;
 }
 
 .landing__mode-top {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: var(--space-lg);
+  border-bottom: var(--border);
+}
+
+.landing__mode-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  padding: var(--space-lg);
+  flex: 1;
 }
 
 .landing__mode-icon {
@@ -334,6 +410,12 @@
   text-transform: uppercase;
   font-weight: 700;
   color: var(--ink);
+  cursor: pointer;
+  transition: opacity var(--duration-fast);
+}
+
+.landing__mode-action:hover {
+  opacity: 0.6;
 }
 
 .landing__mode-soon {
