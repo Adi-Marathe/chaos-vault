@@ -1,0 +1,54 @@
+/* ─── Design tokens ─── */
+:root {
+  /* Palette */
+  --ink: #11163A;
+  --cream: #FFFCF2;
+  --slate: #4B5675;
+  --violet: #6D5AF5;
+  --yellow: #FFD84A;
+  --lime: #A6F04A;
+  --aqua: #7FE3F0;
+  --coral: #FF8A7A;
+  --lavender: #F1EEFF;
+  --sky: #6CC8FF;
+  --mint-green: #55E2A4;
+
+  /* Zone panels */
+  --zone-mint: #B3EBB6;
+  --zone-orange-start: #FFD662;
+  --zone-orange-end: #FF9E3F;
+  --zone-slate-navy: #1F3350;
+  --zone-lilac: #D9D2FF;
+  --zone-near-black: #11163A;
+
+  /* Borders & shadows */
+  --border: 3px solid var(--ink);
+  --radius-card: 28px;
+  --radius-hero: 36px;
+  --radius-button: 14px;
+  --radius-pill: 999px;
+  --shadow: 0 8px 0 rgba(17, 22, 58, 0.14);
+
+  /* Typography */
+  --font-headline: 'Bricolage Grotesque', sans-serif;
+  --font-body: 'Atkinson Hyperlegible', sans-serif;
+  --font-mono: 'Space Mono', monospace;
+
+  /* Spacing scale */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-2xl: 48px;
+  --space-3xl: 64px;
+
+  /* Grid */
+  --grid-size: 32px;
+
+  /* Transition */
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --duration-fast: 120ms;
+  --duration-normal: 200ms;
+  --duration-slow: 400ms;
+}

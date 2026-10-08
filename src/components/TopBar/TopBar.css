@@ -1,0 +1,152 @@
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--cream);
+  border-bottom: var(--border);
+  padding: 0 var(--space-xl);
+}
+
+.topbar__inner {
+  max-width: 1440px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  height: 60px;
+  gap: var(--space-lg);
+}
+
+/* Logo */
+.topbar__logo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.topbar__logo-mark {
+  display: flex;
+}
+
+.topbar__wordmark {
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+
+.topbar__wordmark strong {
+  font-weight: 700;
+}
+
+/* Nav */
+.topbar__nav {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  background: var(--cream);
+  border: var(--border);
+  border-radius: var(--radius-pill);
+  padding: 3px;
+  margin-left: auto;
+}
+
+.topbar__nav-wrapper {
+  display: flex;
+}
+
+.topbar__nav-item {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 6px 16px;
+  border-radius: var(--radius-pill);
+  text-decoration: none;
+  cursor: pointer;
+  transition: background var(--duration-fast), color var(--duration-fast);
+  color: var(--slate);
+  white-space: nowrap;
+}
+
+.topbar__nav-item:hover {
+  background: var(--lavender);
+}
+
+.topbar__nav-item--active {
+  background: var(--ink);
+  color: var(--cream);
+}
+
+.topbar__nav-item--active:hover {
+  background: var(--ink);
+}
+
+.topbar__nav-item--disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+
+.topbar__nav-item--disabled:hover {
+  background: transparent;
+}
+
+/* Right controls */
+.topbar__right {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  margin-left: auto;
+}
+
+/* Progress pill */
+.topbar__pill {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  border: var(--border);
+  border-radius: var(--radius-pill);
+  padding: 5px 14px;
+  background: var(--cream);
+  min-width: 110px;
+}
+
+.topbar__pill-text {
+  font-size: 0.7rem;
+  white-space: nowrap;
+  color: var(--ink);
+}
+
+.topbar__pill-bar {
+  width: 48px;
+  height: 6px;
+  background: var(--lavender);
+  border-radius: var(--radius-pill);
+  overflow: hidden;
+}
+
+.topbar__pill-fill {
+  height: 100%;
+  background: var(--lime);
+  border-radius: var(--radius-pill);
+  transition: width var(--duration-slow) var(--ease-spring);
+}
+
+/* Coins */
+.topbar__coins {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  border: var(--border);
+  border-radius: var(--radius-pill);
+  padding: 5px 14px;
+  background: var(--cream);
+  font-size: 0.7rem;
+  color: var(--ink);
+}
+
+.topbar__coins svg {
+  color: var(--yellow);
+}

@@ -1,0 +1,14 @@
+.hearts {
+  display: flex;
+  gap: 4px;
+}
+
+.hearts__icon {
+  font-size: 1.1rem;
+  color: var(--lavender);
+  transition: color var(--duration-fast);
+}
+
+.hearts__icon--filled {
+  color: var(--coral);
+}

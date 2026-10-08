@@ -1,0 +1,178 @@
+/* ══════════════════════════════════════════
+   ZoneCard
+   ══════════════════════════════════════════ */
+
+.zonecard {
+  display: flex;
+  flex-direction: column;
+  border: var(--border);
+  border-radius: var(--radius-card);
+  background: var(--cream);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  transition: transform var(--duration-fast), box-shadow var(--duration-fast);
+}
+
+/* ── Panel (illustration area) ── */
+.zonecard__panel {
+  position: relative;
+  height: 170px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ink);
+  overflow: hidden;
+  border-bottom: var(--border);
+}
+
+.zonecard__panel--dark {
+  color: var(--cream);
+}
+
+.zonecard__panel-label {
+  position: absolute;
+  bottom: 10px;
+  left: 14px;
+  font-size: 0.6rem;
+  padding: 3px 10px;
+  border-radius: var(--radius-pill);
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.zonecard__panel--dark .zonecard__panel-label {
+  color: var(--cream);
+}
+
+/* ── Illustrations ── */
+.zonecard__illus {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.zonecard__illus--tiles {
+  gap: var(--space-sm);
+}
+
+.zonecard__tile {
+  width: 44px;
+  height: 44px;
+  border: var(--border);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  font-weight: 700;
+  background: var(--cream);
+  color: var(--ink);
+}
+
+/* Digit docks harbour buckets */
+.zonecard__illus--docks {
+  flex-direction: column;
+  gap: 4px;
+}
+
+.zonecard__dock-row {
+  display: flex;
+  gap: 3px;
+}
+
+.zonecard__dock-cell {
+  width: 28px;
+  height: 28px;
+  border: 2px solid var(--ink);
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 700;
+  background: var(--cream);
+  color: var(--ink);
+}
+
+/* ── Info section ── */
+.zonecard__info {
+  padding: var(--space-md) var(--space-lg);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.zonecard__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.zonecard__zone-label {
+  font-size: 0.65rem;
+  color: var(--slate);
+}
+
+.zonecard__name {
+  font-size: 1.25rem;
+  line-height: 1.2;
+}
+
+.zonecard__algo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  flex-wrap: wrap;
+  color: var(--slate);
+}
+
+.zonecard__desc {
+  font-size: 0.85rem;
+  color: var(--slate);
+  line-height: 1.45;
+  margin-bottom: var(--space-xs);
+}
+
+/* ── Level nodes row ── */
+.zonecard__nodes {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 0;
+  padding: var(--space-sm) 0;
+  flex-wrap: nowrap;
+}
+
+.zonecard__node-group {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+/* Connector line between nodes */
+.zonecard__connector {
+  width: 24px;
+  height: 3px;
+  background: var(--lavender);
+  flex-shrink: 0;
+  margin: 0 2px;
+  margin-bottom: 24px; /* align with circle center */
+}
+
+.zonecard__connector--cleared {
+  background: var(--lime);
+}
+
+/* ── Action button area ── */
+.zonecard__action {
+  padding: 0 var(--space-lg) var(--space-lg);
+}
+
+.zonecard__btn {
+  width: 100%;
+  font-size: 0.9rem;
+}

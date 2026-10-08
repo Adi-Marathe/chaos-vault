@@ -1,0 +1,27 @@
+.progressbar {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  width: 100%;
+}
+
+.progressbar__label {
+  font-size: 0.7rem;
+  white-space: nowrap;
+  color: var(--slate);
+}
+
+.progressbar__track {
+  flex: 1;
+  height: 8px;
+  background: var(--lavender);
+  border-radius: var(--radius-pill);
+  overflow: hidden;
+  border: 2px solid var(--ink);
+}
+
+.progressbar__fill {
+  height: 100%;
+  border-radius: var(--radius-pill);
+  transition: width var(--duration-slow) var(--ease-spring);
+}

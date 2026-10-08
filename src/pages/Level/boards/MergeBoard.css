@@ -1,0 +1,189 @@
+.mergeboard {
+  border: var(--border);
+  border-radius: var(--radius-card);
+  background: var(--ink);
+  color: var(--cream);
+  box-shadow: var(--shadow);
+  padding: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.mergeboard--shake {
+  animation: board-shake 0.4s ease-in-out;
+}
+
+.mergeboard__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mergeboard__status {
+  font-size: 0.65rem;
+  color: var(--cream);
+  opacity: 0.7;
+}
+
+.mergeboard__phase-pill {
+  font-size: 0.6rem;
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+  background: var(--lime);
+  color: var(--ink);
+}
+
+.mergeboard__phase-pill--merge {
+  background: var(--violet);
+  color: var(--cream);
+}
+
+/* Runs strip */
+.mergeboard__runs-strip {
+  display: flex;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: var(--space-sm) 0;
+}
+
+.mergeboard__run {
+  display: flex;
+  gap: 2px;
+  padding: 4px 8px;
+  border: 2px solid rgba(255,255,255,0.15);
+  border-radius: 8px;
+  background: rgba(255,255,255,0.05);
+}
+
+.mergeboard__run-tile {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--slate);
+  color: var(--cream);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.65rem;
+}
+
+/* Merge area */
+.mergeboard__merge-area {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-md);
+}
+
+.mergeboard__lane {
+  border: 2px solid rgba(255,255,255,0.15);
+  border-radius: var(--radius-card);
+  padding: var(--space-md);
+}
+
+.mergeboard__lane-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: var(--space-sm);
+  font-size: 0.6rem;
+}
+
+.mergeboard__lane-dir {
+  background: var(--lime);
+  color: var(--ink);
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.5rem;
+}
+
+.mergeboard__lane-tiles {
+  display: flex;
+  gap: var(--space-sm);
+}
+
+.mergeboard__lane-tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.mergeboard__lane-tile--head .mergeboard__tile-val {
+  background: var(--lime);
+  color: var(--ink);
+}
+
+.mergeboard__lane-tile--head-b .mergeboard__tile-val {
+  background: var(--yellow);
+  color: var(--ink);
+}
+
+.mergeboard__head-label {
+  font-size: 0.45rem;
+  color: var(--lime);
+}
+
+.mergeboard__tile-val {
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+  background: var(--slate);
+  color: var(--cream);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-headline);
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.mergeboard__empty {
+  font-size: 0.7rem;
+  color: var(--slate);
+  padding: var(--space-sm);
+}
+
+/* Junction */
+.mergeboard__junction {
+  text-align: center;
+  font-size: 0.6rem;
+  padding: var(--space-sm);
+  background: rgba(255,255,255,0.05);
+  border-radius: var(--radius-pill);
+}
+
+/* Output */
+.mergeboard__output {
+  border: 2px solid var(--lime);
+  border-radius: var(--radius-card);
+  padding: var(--space-md);
+}
+
+.mergeboard__output-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: var(--space-sm);
+  font-size: 0.6rem;
+}
+
+.mergeboard__output-info {
+  color: var(--slate);
+}
+
+.mergeboard__output-tiles {
+  display: flex;
+  gap: var(--space-sm);
+}
+
+.mergeboard__output-tile .mergeboard__tile-val {
+  background: var(--lime);
+  color: var(--ink);
+}
+
+.mergeboard__done {
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--lime);
+  padding: var(--space-md);
+}

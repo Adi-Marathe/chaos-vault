@@ -1,0 +1,17 @@
+.stars {
+  display: flex;
+  gap: 4px;
+}
+
+.stars--sm .stars__icon { font-size: 0.9rem; }
+.stars--md .stars__icon { font-size: 1.3rem; }
+.stars--lg .stars__icon { font-size: 2rem; }
+
+.stars__icon {
+  color: var(--lavender);
+  transition: color var(--duration-fast), transform var(--duration-fast);
+}
+
+.stars__icon--earned {
+  color: var(--yellow);
+}

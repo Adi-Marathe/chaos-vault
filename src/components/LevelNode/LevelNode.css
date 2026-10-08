@@ -1,0 +1,95 @@
+.levelnode {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.levelnode__link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.levelnode__link--disabled {
+  cursor: default;
+  opacity: 0.5;
+}
+
+/* Circle */
+.levelnode__circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 3px solid var(--ink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform var(--duration-fast), box-shadow var(--duration-fast);
+  position: relative;
+}
+
+/* Cleared: lime background, dark check */
+.levelnode--cleared {
+  background: var(--lime);
+  color: var(--ink);
+}
+
+/* Current: yellow background, pulsing */
+.levelnode--current {
+  background: var(--yellow);
+  color: var(--ink);
+  animation: levelnode-pulse 2s ease-in-out infinite;
+}
+
+@keyframes levelnode-pulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(255, 216, 74, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(255, 216, 74, 0);
+  }
+}
+
+/* Open (unlocked but not cleared, not current) */
+.levelnode--open {
+  background: var(--cream);
+  color: var(--ink);
+  border-style: dashed;
+}
+
+/* Locked */
+.levelnode--locked {
+  background: var(--lavender);
+  color: var(--slate);
+}
+
+.levelnode__code {
+  font-size: 0.65rem;
+  font-weight: 700;
+}
+
+.levelnode__label {
+  font-size: 0.6rem;
+  color: var(--slate);
+  margin-top: 2px;
+}
+
+.levelnode__status {
+  font-size: 0.55rem;
+  color: var(--violet);
+  font-weight: 700;
+}
+
+.levelnode__stars {
+  margin-top: 2px;
+}
+
+/* Connector line between nodes */
+.levelnode + .levelnode::before {
+  /* handled by parent flexbox gap */
+}

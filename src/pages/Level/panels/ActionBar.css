@@ -1,0 +1,59 @@
+.actionbar {
+  display: flex;
+  gap: var(--space-md);
+  padding: var(--space-md) 0;
+}
+
+.actionbar__btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+  padding: 14px 20px;
+  border: var(--border);
+  border-radius: var(--radius-button);
+  font-family: var(--font-headline);
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform var(--duration-fast), box-shadow var(--duration-fast);
+  box-shadow: var(--shadow);
+  background: var(--cream);
+  color: var(--ink);
+}
+
+.actionbar__btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 0 rgba(17, 22, 58, 0.14);
+}
+
+.actionbar__btn:active:not(:disabled) {
+  transform: translateY(2px);
+  box-shadow: 0 4px 0 rgba(17, 22, 58, 0.14);
+}
+
+.actionbar__btn:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.actionbar__btn--swap {
+  background: var(--sky);
+}
+
+.actionbar__btn--skip {
+  background: var(--yellow);
+}
+
+.actionbar__btn-label {
+  flex: 1;
+}
+
+.actionbar__btn-key {
+  font-size: 0.65rem;
+  padding: 2px 8px;
+  border-radius: 4px;
+  background: rgba(17, 22, 58, 0.1);
+  border: 1px solid rgba(17, 22, 58, 0.2);
+}

@@ -1,0 +1,251 @@
+/* ══════════════════════════════════════════
+   World Map page
+   ══════════════════════════════════════════ */
+
+.worldmap {
+  padding: 0 var(--space-xl);
+  padding-bottom: var(--space-xl);
+}
+
+.worldmap__container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ── Navy hero ── */
+.worldmap__hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--ink);
+  color: var(--cream);
+  border: var(--border);
+  border-radius: var(--radius-hero);
+  padding: var(--space-2xl) var(--space-2xl);
+  margin-top: var(--space-lg);
+  gap: var(--space-xl);
+}
+
+.worldmap__hero-left {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.worldmap__hero-eyebrow {
+  font-size: 0.7rem;
+  color: var(--lime);
+  letter-spacing: 0.1em;
+}
+
+.worldmap__hero-title {
+  font-size: clamp(2rem, 3.5vw, 2.8rem);
+  color: var(--cream);
+  line-height: 1.1;
+}
+
+.worldmap__hero-sub {
+  font-size: 0.95rem;
+  color: rgba(255, 252, 242, 0.7);
+  max-width: 420px;
+  line-height: 1.5;
+}
+
+/* Stat card */
+.worldmap__stat-card {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  background: var(--cream);
+  color: var(--ink);
+  border: var(--border);
+  border-radius: var(--radius-card);
+  padding: var(--space-lg) var(--space-xl);
+  flex-shrink: 0;
+  box-shadow: var(--shadow);
+}
+
+.worldmap__stat-star {
+  color: var(--yellow);
+}
+
+.worldmap__stat-nums {
+  display: flex;
+  flex-direction: column;
+}
+
+.worldmap__stat-big {
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.worldmap__stat-label {
+  font-size: 0.6rem;
+  color: var(--slate);
+  margin-top: 4px;
+}
+
+/* ── Progress strip ── */
+.worldmap__progress-strip {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  padding: var(--space-md) var(--space-lg);
+  border: var(--border);
+  border-radius: var(--radius-card);
+  background: var(--cream);
+  margin-top: var(--space-lg);
+  box-shadow: var(--shadow);
+}
+
+.worldmap__progress-left {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  flex-shrink: 0;
+}
+
+.worldmap__progress-icon {
+  color: var(--violet);
+}
+
+.worldmap__progress-label {
+  font-size: 0.65rem;
+  color: var(--slate);
+  white-space: nowrap;
+}
+
+.worldmap__progress-bar {
+  flex: 1;
+  min-width: 120px;
+}
+
+.worldmap__progress-pct {
+  font-size: 0.7rem;
+  color: var(--slate);
+  white-space: nowrap;
+}
+
+.worldmap__progress-right {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  flex-shrink: 0;
+  margin-left: auto;
+}
+
+.worldmap__progress-next-label {
+  font-size: 0.65rem;
+  color: var(--slate);
+  white-space: nowrap;
+}
+
+/* ── Zone grid (3 × 2) ── */
+.worldmap__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-lg);
+  margin-top: var(--space-xl);
+}
+
+/* ── Footer ── */
+.worldmap__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: var(--space-2xl);
+  padding: var(--space-md) 0;
+}
+
+.worldmap__reset-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.7rem;
+  color: var(--slate);
+  padding: 6px 14px;
+  border: 2px solid rgba(17, 22, 58, 0.15);
+  border-radius: var(--radius-pill);
+  background: transparent;
+  cursor: pointer;
+  transition: border-color var(--duration-fast), color var(--duration-fast);
+}
+
+.worldmap__reset-btn:hover {
+  border-color: var(--coral);
+  color: var(--coral);
+}
+
+.worldmap__confirm {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-size: 0.7rem;
+}
+
+.worldmap__confirm-yes {
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+  border: 2px solid var(--coral);
+  background: var(--coral);
+  color: var(--cream);
+  font-size: 0.65rem;
+  cursor: pointer;
+}
+
+.worldmap__confirm-no {
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+  border: 2px solid var(--ink);
+  background: transparent;
+  font-size: 0.65rem;
+  cursor: pointer;
+}
+
+.worldmap__dev-hint {
+  font-size: 0.6rem;
+  color: var(--slate);
+  opacity: 0.6;
+}
+
+/* Footer links */
+.worldmap__footer-links {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-lg) 0;
+  border-top: var(--border);
+  margin-top: var(--space-md);
+}
+
+.worldmap__footer-links-left {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-size: 0.7rem;
+  color: var(--slate);
+}
+
+.worldmap__footer-links-right {
+  display: flex;
+  gap: var(--space-xl);
+  font-size: 0.7rem;
+  color: var(--slate);
+}
+
+/* ── Responsive ── */
+@media (max-width: 1100px) {
+  .worldmap__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .worldmap__hero {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .worldmap__progress-strip {
+    flex-wrap: wrap;
+  }
+}

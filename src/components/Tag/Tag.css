@@ -1,0 +1,33 @@
+.tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 12px;
+  border-radius: var(--radius-pill);
+  border: var(--border);
+  font-size: 0.65rem;
+  white-space: nowrap;
+  background: var(--cream);
+  color: var(--ink);
+}
+
+.tag--lime {
+  background: var(--lime);
+}
+
+.tag--violet {
+  background: var(--violet);
+  color: var(--cream);
+}
+
+.tag--yellow {
+  background: var(--yellow);
+}
+
+.tag--coral {
+  background: var(--coral);
+}
+
+.tag--slate {
+  background: var(--slate);
+  color: var(--cream);
+}

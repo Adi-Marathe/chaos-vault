@@ -1,0 +1,214 @@
+.shellboard {
+  border: var(--border);
+  border-radius: var(--radius-card);
+  background: var(--zone-slate-navy);
+  color: var(--cream);
+  box-shadow: var(--shadow);
+  padding: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.shellboard--shake {
+  animation: board-shake 0.4s ease-in-out;
+}
+
+.shellboard__header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.shellboard__gaps {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  flex-wrap: wrap;
+}
+
+.shellboard__gap-label {
+  font-size: 0.6rem;
+  color: var(--cream);
+  opacity: 0.7;
+}
+
+.shellboard__gap-chip {
+  font-size: 0.55rem;
+  padding: 3px 10px;
+  border-radius: var(--radius-pill);
+  border: 2px solid rgba(255,255,255,0.2);
+}
+
+.shellboard__gap-chip--done {
+  background: var(--lime);
+  color: var(--ink);
+  border-color: var(--lime);
+}
+
+.shellboard__gap-chip--active {
+  background: var(--yellow);
+  color: var(--ink);
+  border-color: var(--yellow);
+}
+
+.shellboard__gap-chip--locked {
+  opacity: 0.4;
+}
+
+.shellboard__lanes-legend {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.shellboard__lanes-label {
+  font-size: 0.55rem;
+  opacity: 0.7;
+}
+
+.shellboard__lane-chip {
+  font-size: 0.5rem;
+  padding: 2px 8px;
+  border-radius: 4px;
+  color: var(--ink);
+}
+
+/* Stride state */
+.shellboard__stride {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: 6px 14px;
+  background: rgba(255,255,255,0.06);
+  border-radius: var(--radius-pill);
+  font-size: 0.7rem;
+  justify-content: center;
+}
+
+.shellboard__stride-icon {
+  font-size: 1rem;
+}
+
+/* Conveyor */
+.shellboard__conveyor {
+  position: relative;
+  padding: var(--space-lg) 0;
+}
+
+.shellboard__idx-row {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-sm);
+}
+
+.shellboard__idx {
+  width: 68px;
+  text-align: center;
+  font-size: 0.5rem;
+  color: rgba(255,255,255,0.5);
+}
+
+.shellboard__idx--active {
+  color: var(--yellow);
+  font-weight: 700;
+}
+
+.shellboard__idx--partner {
+  color: var(--sky);
+  font-weight: 700;
+}
+
+/* Arcs (simplified as top borders) */
+.shellboard__arcs {
+  position: relative;
+  height: 20px;
+}
+
+.shellboard__arc {
+  position: absolute;
+  top: 0;
+  height: 16px;
+  border-top: 2px solid;
+  border-left: 2px solid;
+  border-right: 2px solid;
+  border-radius: 12px 12px 0 0;
+  opacity: 0.3;
+}
+
+.shellboard__tiles {
+  display: flex;
+  gap: var(--space-sm);
+  justify-content: center;
+}
+
+.shellboard__tile {
+  width: 68px;
+  height: 72px;
+  border: 3px solid rgba(255,255,255,0.2);
+  border-radius: 12px;
+  background: var(--cream);
+  color: var(--ink);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  transition: border-color 0.2s, background 0.2s, transform 0.2s;
+  border-bottom: 4px solid var(--lane-color, rgba(255,255,255,0.2));
+}
+
+.shellboard__tile--active {
+  border-color: var(--yellow);
+  background: var(--yellow);
+  transform: translateY(-8px);
+  box-shadow: 0 8px 16px rgba(255,216,74,0.3);
+}
+
+.shellboard__tile--partner {
+  border-color: var(--sky);
+  border-style: dashed;
+}
+
+.shellboard__tile--done {
+  border-color: var(--lime);
+  background: rgba(166,240,74,0.15);
+}
+
+.shellboard__tile-val {
+  font-family: var(--font-headline);
+  font-size: 1.4rem;
+  font-weight: 800;
+}
+
+.shellboard__tile-role {
+  font-size: 0.45rem;
+  padding: 1px 6px;
+  border-radius: 4px;
+  background: rgba(17,22,58,0.08);
+}
+
+/* Lane labels */
+.shellboard__lane-labels {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-sm);
+  margin-top: var(--space-xs);
+}
+
+.shellboard__lane-label {
+  width: 68px;
+  text-align: center;
+  font-size: 0.45rem;
+}
+
+/* Hint */
+.shellboard__hint {
+  font-size: 0.7rem;
+  padding: var(--space-sm) var(--space-md);
+  border: 2px dashed rgba(255,255,255,0.2);
+  border-radius: var(--radius-button);
+  background: rgba(255,255,255,0.05);
+  text-align: center;
+}

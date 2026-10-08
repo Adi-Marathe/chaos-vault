@@ -1,0 +1,159 @@
+.selboard {
+  border: var(--border);
+  border-radius: var(--radius-card);
+  background: linear-gradient(135deg, var(--zone-orange-start), var(--zone-orange-end));
+  box-shadow: var(--shadow);
+  padding: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.selboard--shake {
+  animation: board-shake 0.4s ease-in-out;
+}
+
+.selboard__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.selboard__status {
+  font-size: 0.65rem;
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+  background: rgba(255,255,255,0.25);
+}
+
+.selboard__pass {
+  font-size: 0.6rem;
+}
+
+.selboard__indicators {
+  display: flex;
+  gap: var(--space-sm);
+}
+
+.selboard__pill {
+  font-size: 0.6rem;
+  padding: 4px 12px;
+  border: 2px solid var(--ink);
+  border-radius: var(--radius-pill);
+  background: var(--cream);
+}
+
+.selboard__pill--active {
+  background: var(--yellow);
+}
+
+.selboard__conveyor {
+  background: var(--ink);
+  border: var(--border);
+  border-radius: var(--radius-card);
+  padding: var(--space-md);
+}
+
+.selboard__belt-header {
+  margin-bottom: var(--space-sm);
+}
+
+.selboard__belt-label {
+  font-size: 0.55rem;
+  color: var(--cream);
+  opacity: 0.6;
+}
+
+.selboard__crane {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: var(--space-sm);
+}
+
+.selboard__crane-arm {
+  width: 60%;
+  height: 4px;
+  background: var(--yellow);
+  border-radius: 2px;
+}
+
+.selboard__crane-label {
+  font-size: 0.55rem;
+  color: var(--yellow);
+}
+
+.selboard__zones {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 var(--space-sm);
+  margin-bottom: var(--space-xs);
+}
+
+.selboard__zone-label {
+  font-size: 0.5rem;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.selboard__zone-label--sorted {
+  color: var(--lime);
+}
+
+.selboard__zone-label--unsorted {
+  color: var(--yellow);
+}
+
+.selboard__tiles {
+  display: flex;
+  gap: var(--space-sm);
+  justify-content: center;
+  padding: var(--space-md) 0;
+}
+
+.selboard__tile {
+  width: 68px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding: 8px 6px;
+  border: 3px solid rgba(255,255,255,0.3);
+  border-radius: 12px;
+  background: var(--cream);
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.selboard__tile:disabled {
+  cursor: default;
+}
+
+.selboard__tile--sorted {
+  border-color: var(--lime);
+  background: rgba(166,240,74,0.2);
+  opacity: 0.7;
+}
+
+.selboard__tile--done {
+  border-color: var(--lime);
+  background: rgba(166,240,74,0.25);
+}
+
+.selboard__tile-idx {
+  font-size: 0.5rem;
+  color: var(--slate);
+}
+
+.selboard__tile-val {
+  font-family: var(--font-headline);
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--ink);
+}
+
+.selboard__tile-slot {
+  font-size: 0.5rem;
+  color: var(--slate);
+}

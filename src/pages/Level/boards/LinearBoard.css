@@ -1,0 +1,122 @@
+.linearboard {
+  border: var(--border);
+  border-radius: var(--radius-card);
+  background: var(--zone-mint);
+  box-shadow: var(--shadow);
+  padding: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.linearboard--shake {
+  animation: board-shake 0.4s ease-in-out;
+}
+
+.linearboard__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.linearboard__status {
+  font-size: 0.65rem;
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+  background: rgba(255,255,255,0.3);
+}
+
+.linearboard__scan {
+  font-size: 0.6rem;
+  color: var(--ink);
+}
+
+.linearboard__conveyor {
+  background: var(--ink);
+  border: var(--border);
+  border-radius: var(--radius-card);
+  padding: var(--space-lg) var(--space-md);
+}
+
+.linearboard__crates {
+  display: flex;
+  gap: var(--space-xs);
+  justify-content: center;
+  flex-wrap: nowrap;
+}
+
+.linearboard__crate {
+  width: 64px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 8px 4px;
+  border: 3px solid rgba(255,255,255,0.2);
+  border-radius: 10px;
+  background: var(--cream);
+  position: relative;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.linearboard__crate--current {
+  border-color: var(--yellow);
+  background: var(--yellow);
+  box-shadow: 0 0 12px rgba(255,216,74,0.4);
+}
+
+.linearboard__crate--open {
+  opacity: 0.7;
+}
+
+.linearboard__crate--current.linearboard__crate--open {
+  opacity: 1;
+}
+
+.linearboard__crate--found {
+  border-color: var(--lime);
+  background: var(--lime);
+  opacity: 1;
+  box-shadow: 0 0 16px rgba(166,240,74,0.5);
+}
+
+.linearboard__crate--past {
+  opacity: 0.45;
+}
+
+.linearboard__lantern {
+  position: absolute;
+  top: -28px;
+  font-size: 1.3rem;
+}
+
+.linearboard__crate-idx {
+  font-size: 0.5rem;
+  color: var(--slate);
+}
+
+.linearboard__crate-face {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.linearboard__crate-val {
+  font-family: var(--font-headline);
+  font-size: 1.2rem;
+  font-weight: 800;
+}
+
+.linearboard__crate-sealed {
+  font-family: var(--font-headline);
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--slate);
+}
+
+.linearboard__crate-slot {
+  font-size: 0.45rem;
+  color: var(--slate);
+}

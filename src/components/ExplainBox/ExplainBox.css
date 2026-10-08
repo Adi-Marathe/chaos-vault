@@ -1,0 +1,22 @@
+.explainbox {
+  display: flex;
+  gap: var(--space-md);
+  padding: var(--space-md) var(--space-lg);
+  border: var(--border);
+  border-radius: var(--radius-button);
+  background: var(--cream);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  line-height: 1.6;
+  color: var(--ink);
+}
+
+.explainbox__prompt {
+  color: var(--violet);
+  flex-shrink: 0;
+  user-select: none;
+}
+
+.explainbox__content {
+  flex: 1;
+}

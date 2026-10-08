@@ -1,0 +1,198 @@
+.insboard {
+  border: var(--border);
+  border-radius: var(--radius-card);
+  background: linear-gradient(135deg, var(--zone-orange-start), var(--zone-orange-end));
+  box-shadow: var(--shadow);
+  padding: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.insboard--shake {
+  animation: board-shake 0.4s ease-in-out;
+}
+
+.insboard__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.insboard__status {
+  font-size: 0.65rem;
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+  background: rgba(255,255,255,0.25);
+}
+
+.insboard__invariant {
+  font-size: 0.6rem;
+  color: var(--ink);
+}
+
+/* Draw area */
+.insboard__draw-area {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: var(--space-xl);
+  padding: var(--space-md);
+}
+
+.insboard__drawn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.insboard__drawn-label {
+  font-size: 0.6rem;
+  padding: 4px 12px;
+  border: 2px solid var(--ink);
+  border-radius: var(--radius-pill);
+  background: var(--ink);
+  color: var(--cream);
+}
+
+.insboard__drawn-card {
+  width: 80px;
+  height: 100px;
+  border: 3px solid var(--ink);
+  border-radius: 12px;
+  background: var(--yellow);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  box-shadow: 0 8px 20px rgba(17,22,58,0.2);
+}
+
+.insboard__drawn-key {
+  font-size: 0.55rem;
+  color: var(--ink);
+}
+
+.insboard__drawn-val {
+  font-family: var(--font-headline);
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--ink);
+}
+
+.insboard__deck {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.insboard__deck-face {
+  width: 72px;
+  height: 92px;
+  border: 3px solid var(--ink);
+  border-radius: 12px;
+  background: var(--ink);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  color: var(--cream);
+}
+
+.insboard__deck-icon {
+  font-size: 1.4rem;
+}
+
+.insboard__deck-label {
+  font-size: 0.55rem;
+}
+
+.insboard__deck-count {
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+
+.insboard__deck-title {
+  font-size: 0.5rem;
+  color: var(--ink);
+}
+
+/* Hand / conveyor */
+.insboard__conveyor {
+  background: var(--ink);
+  border: var(--border);
+  border-radius: var(--radius-card);
+  padding: var(--space-md);
+}
+
+.insboard__cards {
+  display: flex;
+  gap: var(--space-sm);
+  justify-content: center;
+  padding: var(--space-md) 0;
+}
+
+.insboard__card {
+  width: 76px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 10px 6px;
+  border: 3px solid rgba(255,255,255,0.2);
+  border-radius: 12px;
+  background: var(--cream);
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.insboard__card--sorted {
+  border-color: var(--lime);
+  background: rgba(166,240,74,0.15);
+}
+
+.insboard__card--drawn {
+  border-color: var(--yellow);
+  background: var(--yellow);
+  box-shadow: 0 0 12px rgba(255,216,74,0.4);
+}
+
+.insboard__card--target {
+  border-color: var(--sky);
+  border-style: dashed;
+}
+
+.insboard__card--done {
+  border-color: var(--lime);
+  background: rgba(166,240,74,0.25);
+}
+
+.insboard__card-idx {
+  font-size: 0.5rem;
+  color: var(--slate);
+}
+
+.insboard__card-val {
+  font-family: var(--font-headline);
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--ink);
+}
+
+.insboard__card-slot {
+  font-size: 0.45rem;
+  color: var(--slate);
+}
+
+/* Comparison hint */
+.insboard__compare {
+  font-size: 0.7rem;
+  padding: var(--space-sm) var(--space-md);
+  border: 2px dashed var(--ink);
+  border-radius: var(--radius-button);
+  background: rgba(255,255,255,0.2);
+  text-align: center;
+}

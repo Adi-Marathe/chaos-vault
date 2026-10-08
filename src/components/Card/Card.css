@@ -1,0 +1,26 @@
+.card {
+  border: var(--border);
+  border-radius: var(--radius-card);
+  background: var(--cream);
+  box-shadow: var(--shadow);
+  padding: var(--space-lg);
+  transition: transform var(--duration-fast), box-shadow var(--duration-fast);
+}
+
+.card--outlined {
+  box-shadow: none;
+}
+
+.card--filled {
+  background: var(--lavender);
+  box-shadow: none;
+}
+
+.card:hover {
+  /* only cards with explicit hover class will lift */
+}
+
+.card.card--hoverable:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 0 rgba(17, 22, 58, 0.10);
+}

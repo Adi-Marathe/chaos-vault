@@ -1,0 +1,64 @@
+.steplog {
+  border: var(--border);
+  border-radius: var(--radius-card);
+  background: var(--cream);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.steplog__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-sm) var(--space-lg);
+  border-bottom: var(--border);
+}
+
+.steplog__title {
+  font-size: 0.65rem;
+  color: var(--slate);
+}
+
+.steplog__live {
+  font-size: 0.6rem;
+  color: var(--violet);
+}
+
+.steplog__body {
+  padding: var(--space-sm) var(--space-md);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.steplog__empty {
+  font-size: 0.7rem;
+  color: var(--slate);
+  padding: var(--space-sm);
+}
+
+.steplog__entry {
+  display: flex;
+  gap: 6px;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 0.7rem;
+  line-height: 1.5;
+}
+
+.steplog__entry--latest {
+  background: var(--lavender);
+  border: 1px solid var(--violet);
+}
+
+.steplog__prompt {
+  color: var(--violet);
+  flex-shrink: 0;
+}
+
+.steplog__text {
+  color: var(--ink);
+  word-break: break-word;
+}
