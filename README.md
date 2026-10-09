@@ -14,7 +14,6 @@ An algorithmic puzzle-RPG for the browser. Eight classic algorithms, one move at
 [![PRs welcome](https://img.shields.io/badge/PRs-welcome-A6F04A?labelColor=11163A)](#contributing)
 
 </div>
----
 
 ## Contents
 
