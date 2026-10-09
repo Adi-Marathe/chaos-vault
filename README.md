@@ -13,11 +13,6 @@ An algorithmic puzzle-RPG for the browser. Eight classic algorithms, one move at
 [![Stars](https://img.shields.io/github/stars/Adi-Marathe/chaos-vault?color=FFD84A&labelColor=11163A)](https://github.com/Adi-Marathe/chaos-vault/stargazers)
 [![PRs welcome](https://img.shields.io/badge/PRs-welcome-A6F04A?labelColor=11163A)](#contributing)
 
-<br />
-
-<img src="docs/demo.gif" alt="Chaos Vault gameplay demo" width="860" />
-
-</div>
 
 ---
 
