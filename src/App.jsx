@@ -7,6 +7,7 @@ import Landing from './pages/Landing/Landing';
 import WorldMap from './pages/WorldMap/WorldMap';
 import Level from './pages/Level/Level';
 import Result from './pages/Result/Result';
+import MobileNotSupported from './components/MobileNotSupported/MobileNotSupported';
 import './App.css';
 
 function AnimatedRoutes() {
@@ -30,8 +31,11 @@ export default function App() {
   return (
     <BrowserRouter>
       <ProgressProvider>
-        <TopBar />
-        <AnimatedRoutes />
+        <MobileNotSupported />
+        <div className="app-content">
+          <TopBar />
+          <AnimatedRoutes />
+        </div>
       </ProgressProvider>
     </BrowserRouter>
   );

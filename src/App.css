@@ -1,1 +1,12 @@
 /* App-level layout */
+.app-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+@media (max-width: 767px) {
+  .app-content {
+    display: none !important;
+  }
+}
