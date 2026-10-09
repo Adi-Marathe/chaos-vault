@@ -24,7 +24,6 @@ An algorithmic puzzle-RPG for the browser. Eight classic algorithms, one move at
 ## Contents
 
 - [About](#about)
-- [Screenshots](#screenshots)
 - [How to play](#how-to-play)
 - [Levels](#levels)
 - [Features](#features)
@@ -46,18 +45,8 @@ Every level is a small puzzle in which you perform one algorithm by hand (open, 
 It covers two searching and six sorting algorithms, each with its own board, rules and theme:
 **Linear Search, Binary Search, Bubble Sort, Selection Sort, Insertion Sort, Merge Sort, Shell Sort and Radix Sort.**
 
-## Screenshots
 
-<table>
-  <tr>
-    <td align="center"><img src="docs/screenshots/landing.png" alt="Landing screen" /><br /><sub>Landing</sub></td>
-    <td align="center"><img src="docs/screenshots/world-map.png" alt="World map" /><br /><sub>World map</sub></td>
-  </tr>
-  <tr>
-    <td align="center"><img src="docs/screenshots/gameplay.png" alt="Playing the Bubble Belt level" /><br /><sub>Playing Bubble Belt</sub></td>
-    <td align="center"><img src="docs/screenshots/result.png" alt="Result screen" /><br /><sub>Result screen</sub></td>
-  </tr>
-</table>
+
 
 ## How to play
 
