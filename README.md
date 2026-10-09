@@ -248,9 +248,7 @@ Distributed under the MIT License. See [LICENSE](LICENSE) for details.
 
 ## Credits
 
-- Built by **Aditya (Adi) Marathe**: [GitHub](https://github.com/Adi-Marathe) · [LinkedIn](https://www.linkedin.com/in/adityamarathe234)
-- UI designed with Google Stitch and built with Google Antigravity
-- Visual inspiration: [Algorift](https://algorift.vercel.app)
+- Built by **Aditya Marathe**: [GitHub](https://github.com/Adi-Marathe) · [LinkedIn](https://www.linkedin.com/in/adityamarathe0812)
 - Fonts: Bricolage Grotesque, Atkinson Hyperlegible and Space Mono (Google Fonts). Icons: [Lucide](https://lucide.dev)
 
 <div align="center">
